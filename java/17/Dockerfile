@@ -29,11 +29,11 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 RUN 		apt-get update -y \
  			&& apt-get install -y lsof awscli curl unzip ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
- 			&& useradd -d /home/container -m container \
+ 			&& useradd -d /home/container -m container
 
 RUN         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
             unzip awscliv2.zip && \
-            ./aws/install \
+            ./aws/install
 
 USER        container
 ENV         USER=container HOME=/home/container
